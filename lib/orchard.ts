@@ -30,8 +30,8 @@ export function mulberry32(seed: number) {
 export function createApple(id: number, rand: () => number): AppleSpec {
   return {
     id,
-    x: 6 + rand() * 88,
-    y: 8 + rand() * 72,
+    x: 12 + rand() * 76,
+    y: 12 + rand() * 62,
     size: 86 + rand() * 92,
     seconds: 7 + rand() * 14,
     clockwise: rand() > 0.45,
