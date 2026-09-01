@@ -13,7 +13,7 @@ export type AppleSpec = {
   tilt: number;
 };
 
-const KINDS: AppleKind[] = ["whole", "whole", "half", "sliced", "whole"];
+const KINDS: AppleKind[] = ["whole", "half", "sliced", "sliced", "whole"];
 const HUES: AppleHue[] = ["crimson", "crimson", "crimson", "forest", "honey"];
 
 export function mulberry32(seed: number) {
@@ -33,7 +33,7 @@ export function createApple(id: number, rand: () => number): AppleSpec {
     x: 12 + rand() * 76,
     y: 12 + rand() * 62,
     size: 86 + rand() * 92,
-    seconds: 7 + rand() * 14,
+    seconds: 4.2 + rand() * 7.5,
     clockwise: rand() > 0.45,
     kind: KINDS[Math.floor(rand() * KINDS.length)] ?? "whole",
     hue: HUES[Math.floor(rand() * HUES.length)] ?? "crimson",
