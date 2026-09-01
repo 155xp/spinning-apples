@@ -38,7 +38,7 @@ export function AppleMark({ hue, face, uid }: MarkProps) {
   const gid = `g-${uid}`;
 
   return (
-    <svg viewBox="0 0 100 120" aria-hidden="true" className="h-full w-full">
+    <svg viewBox="0 0 100 120" aria-hidden="true" className="apple-mark">
       <defs>
         <radialGradient id={`${gid}-body`} cx="34%" cy="30%" r="72%">
           <stop offset="0%" stopColor={c.light} />
@@ -51,7 +51,7 @@ export function AppleMark({ hue, face, uid }: MarkProps) {
           <stop offset="100%" stopColor="#e2c894" />
         </radialGradient>
         <linearGradient id={`${gid}-leaf`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#7dae4a" />
+          <stop offset="0%" stopColor="#8ec85a" />
           <stop offset="100%" stopColor="#2f5a1c" />
         </linearGradient>
       </defs>
@@ -71,36 +71,82 @@ export function AppleMark({ hue, face, uid }: MarkProps) {
           <ellipse cx="50" cy="64" rx="7.2" ry="11" fill="#d7b57a" opacity="0.55" />
           <ellipse cx="50" cy="64" rx="3.1" ry="8.4" fill="#c49a5a" opacity="0.7" />
           <g fill="#2a1b10">
-            <ellipse cx="50" cy="52.2" rx="1.35" ry="2.5" transform="rotate(0 50 52.2)" />
-            <ellipse cx="58.4" cy="58.6" rx="1.35" ry="2.5" transform="rotate(68 58.4 58.6)" />
-            <ellipse cx="55.4" cy="69.4" rx="1.35" ry="2.5" transform="rotate(140 55.4 69.4)" />
-            <ellipse cx="44.6" cy="69.4" rx="1.35" ry="2.5" transform="rotate(-140 44.6 69.4)" />
-            <ellipse cx="41.6" cy="58.6" rx="1.35" ry="2.5" transform="rotate(-68 41.6 58.6)" />
+            <ellipse cx="50" cy="52.2" rx="1.35" ry="2.5" />
+            <ellipse
+              cx="58.4"
+              cy="58.6"
+              rx="1.35"
+              ry="2.5"
+              transform="rotate(68 58.4 58.6)"
+            />
+            <ellipse
+              cx="55.4"
+              cy="69.4"
+              rx="1.35"
+              ry="2.5"
+              transform="rotate(140 55.4 69.4)"
+            />
+            <ellipse
+              cx="44.6"
+              cy="69.4"
+              rx="1.35"
+              ry="2.5"
+              transform="rotate(-140 44.6 69.4)"
+            />
+            <ellipse
+              cx="41.6"
+              cy="58.6"
+              rx="1.35"
+              ry="2.5"
+              transform="rotate(-68 41.6 58.6)"
+            />
           </g>
         </>
       )}
 
       <path
-        d="M50 24C48.6 13.5 52.4 6.2 59.2 2.6"
+        d="M51 23C50.2 12 56 4.2 66 1.4"
         fill="none"
         stroke="#3b2414"
-        strokeWidth="2.2"
+        strokeWidth="2.4"
         strokeLinecap="round"
       />
       <path
-        d="M53.6 16.8C67.5 6.4 82.2 16.6 72.4 28.4C66.2 22.4 58.4 20.6 53.6 16.8Z"
+        d="M54 17C74 4 94 18 80 34C72 25 62 22 54 17Z"
         fill={`url(#${gid}-leaf)`}
       />
+      <path
+        d="M62 20C70 14 78 20 74 26"
+        fill="none"
+        stroke="#1f3d12"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+
       {face === "skin" ? (
-        <ellipse
-          cx="36"
-          cy="42"
-          rx="10"
-          ry="16"
-          fill={c.blush}
-          opacity="0.22"
-          transform="rotate(-18 36 42)"
-        />
+        <>
+          <ellipse
+            cx="33"
+            cy="44"
+            rx="13"
+            ry="20"
+            fill="#fff"
+            opacity="0.2"
+            transform="rotate(-22 33 44)"
+          />
+          <ellipse
+            cx="72"
+            cy="70"
+            rx="3.2"
+            ry="2.1"
+            fill={c.dark}
+            opacity="0.45"
+            transform="rotate(18 72 70)"
+          />
+          <circle cx="68" cy="58" r="1.15" fill={c.dark} opacity="0.35" />
+          <circle cx="76" cy="63" r="0.8" fill={c.dark} opacity="0.3" />
+        </>
       ) : null}
     </svg>
   );
